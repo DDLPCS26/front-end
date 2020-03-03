@@ -2,13 +2,15 @@
 import React from 'react';
 // styled components
 import styled from 'styled-components';
+// helpers
+import { styletest } from '../helpers/styletest';
 
 // component
 const MainNavigation = () => {
     return (
         <>
         <Container>
-            
+
         </Container>
         </>
     );
@@ -19,7 +21,7 @@ const MainNavigation = () => {
 const Container = styled.div`
     width: 100%;
     height: 80px; // temp height
-    background-color: red;
+    ${styletest.greenBg}
 `
 
 // export
