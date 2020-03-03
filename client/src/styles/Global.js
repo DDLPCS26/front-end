@@ -1,7 +1,7 @@
 // styled components
 import { createGlobalStyle } from 'styled-components';
 
-// style
+// styles
 export const GlobalStyles = createGlobalStyle`
     body {
         font-size: 1rem;

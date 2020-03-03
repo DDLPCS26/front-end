@@ -6,7 +6,8 @@ import styled from 'styled-components';
 import { styletest } from '../helpers/styletest';
 
 // component
-const MainNavigation = () => {
+const MainNavigation = props => {
+    
     return (
         <>
         <Container>
