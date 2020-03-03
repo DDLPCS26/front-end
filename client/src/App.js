@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom';
 import Landing from './views/landing'
 
 const App = props => {
+  console.log(props);
   return (
     <>
       hello world.

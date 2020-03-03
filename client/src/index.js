@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // router
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 // global themes and style injections
 import { Reset } from './styles/Reset';
 import { GlobalStyles } from './styles/Global';
@@ -13,6 +13,6 @@ ReactDOM.render(
     <Router>
         <Reset />
         <GlobalStyles />
-        <App />
+        <Route path='/' render={(props) => <App history={props.history} location={props.location} match={props.match} />} />
     </Router>, 
     document.getElementById('root'));
