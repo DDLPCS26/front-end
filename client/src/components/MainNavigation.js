@@ -7,12 +7,20 @@ import styled from 'styled-components';
 const MainNavigation = () => {
     return (
         <>
-        hi from main navigation
+        <Container>
+            
+        </Container>
         </>
     );
 };
 
 // styled components
+
+const Container = styled.div`
+    width: 100%;
+    height: 80px; // temp height
+    background-color: red;
+`
 
 // export
 export default MainNavigation;
