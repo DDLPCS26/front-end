@@ -9,8 +9,7 @@ const App = props => {
   console.log(props);
   return (
     <>
-      hello world.
-      <Route path='/landing' component={Landing} />
+      <Route path='/' component={Landing} />
     </>
   );
 }
