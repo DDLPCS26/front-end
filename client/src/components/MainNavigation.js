@@ -35,7 +35,15 @@ const Container = styled.div`
 `
 
 const Logo = styled.div`
-
+    height: 100%;
+    width: 15rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    ${styletest.redBg}
 `
 
 const Menu = styled.div`
