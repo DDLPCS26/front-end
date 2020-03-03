@@ -3,5 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 
 // style
 export const GlobalStyles = createGlobalStyle`
-    // todo
+    body {
+        font-size: 1rem;
+    }
 `
