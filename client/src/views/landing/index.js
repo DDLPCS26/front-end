@@ -44,6 +44,18 @@ const Landing = () => {
                 </InfoCopy>
             </InformationalSection>
         </ContentContainer>
+
+        <FullWidth colors={colorPalette}>
+            <h3>Our Technologies</h3>
+
+            <Stack>
+                <TechCard colors={colorPalette}></TechCard>
+                <TechCard colors={colorPalette}></TechCard>
+                <TechCard colors={colorPalette}></TechCard>
+                <TechCard colors={colorPalette}></TechCard>
+                <TechCard colors={colorPalette}></TechCard>
+            </Stack>
+        </FullWidth>
         </>
     );
 };
@@ -53,7 +65,7 @@ const HeroSection = styled.div`
     width: 100%;
     height: 800px; // temp height
     color: white; // temp color
-    background-color: black;
+    background-color: ${props => props.colors.surface1000};
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -63,6 +75,17 @@ const HeroSection = styled.div`
 const ContentContainer = styled.div`
     max-width: 1400px;
     margin: 10rem auto;
+`
+
+const FullWidth = styled.div`
+    width: 100%;
+    background-color: ${props => props.colors.surface1000};
+    margin: 5rem 0;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 `
 
 const InformationalSection = styled.div`
@@ -86,6 +109,22 @@ const InfoCopy = styled.div`
     width: 50rem;
     height: 25rem;
     background-color: ${props => props.colors.surface200}
+`
+
+const Stack = styled.div`
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+`
+
+const TechCard = styled.div`
+    width: 12rem;
+    height: 15rem;
+    margin: 1rem;
+    background-color: ${props => props.colors.surface200};
+    border-radius: 5px;
 `
 
 // export
