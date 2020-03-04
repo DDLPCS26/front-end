@@ -9,7 +9,7 @@ export const rooms = [
         west: false,
         title: "first",
         description: "first room"
-    }
+    },
     {
         room_id: 2,
         north: false,
@@ -18,7 +18,7 @@ export const rooms = [
         west: true,
         title: "second",
         description: "second room"
-    }
+    },
     {
         room_id: 3,
         north: true,
@@ -27,7 +27,7 @@ export const rooms = [
         west: false,
         title: "third",
         description: "third room"
-    }
+    },
     {
         room_id: 4,
         north: false,
@@ -36,7 +36,7 @@ export const rooms = [
         west: true,
         title: "fourth",
         description: "fourth room"
-    }
+    },
     {
         room_id: 5,
         north: false,
@@ -45,7 +45,7 @@ export const rooms = [
         west: true,
         title: "fifth",
         description: "fifth room"
-    }
+    },
     {
         room_id: 6,
         north: false,
@@ -54,7 +54,7 @@ export const rooms = [
         west: false,
         title: "sixth",
         description: "sixth room"
-    }
+    },
     {
         room_id: 7,
         north: true,
@@ -63,7 +63,7 @@ export const rooms = [
         west: true,
         title: "seventh",
         description: "seventh room"
-    }
+    },
     {
         room_id: 8,
         north: true,
@@ -72,7 +72,7 @@ export const rooms = [
         west: false,
         title: "eigth",
         description: "eigth room"
-    }
+    },
     {
         room_id: 9,
         north: false,
@@ -81,7 +81,7 @@ export const rooms = [
         west: true,
         title: "ninth",
         description: "ninth room"
-    }
+    },
     {
         room_id: 10,
         north: false,
@@ -90,7 +90,7 @@ export const rooms = [
         west: true,
         title: "tenth",
         description: "tenth room"
-    }
+    },
     {
         room_id: 11,
         north: true,
@@ -99,7 +99,7 @@ export const rooms = [
         west: false,
         title: "eleventh",
         description: "eleventh room"
-    }
+    },
     {
         room_id: 12,
         north: false,
@@ -108,7 +108,7 @@ export const rooms = [
         west: true,
         title: "twelth",
         description: "twelth room"
-    }
+    },
     {
         room_id: 13,
         north: false,
@@ -117,7 +117,7 @@ export const rooms = [
         west: true,
         title: "thirteenth",
         description: "thirteenth room"
-    }
+    },
     {
         room_id: 14,
         north: true,
@@ -126,7 +126,7 @@ export const rooms = [
         west: false,
         title: "fourteenth",
         description: "fourteenth room"
-    }
+    },
     {
         room_id: 15,
         north: true,
@@ -135,7 +135,7 @@ export const rooms = [
         west: false,
         title: "fifteenth",
         description: "fifteenth room"
-    }
+    },
     {
         room_id: 16,
         north: false,
@@ -144,7 +144,7 @@ export const rooms = [
         west: false,
         title: "sixteenth",
         description: "sixteenth room"
-    }
+    },
     {
         room_id: 17,
         north: true,
@@ -153,7 +153,7 @@ export const rooms = [
         west: true,
         title: "seventeenth",
         description: "seventeenth room"
-    }
+    },
     {
         room_id: 18,
         north: true,
@@ -162,7 +162,7 @@ export const rooms = [
         west: false,
         title: "eighteenth",
         description: "eighteenth room"
-    }
+    },
     {
         room_id: 19,
         north: true,
@@ -171,7 +171,7 @@ export const rooms = [
         west: true,
         title: "nineteenth",
         description: "nineteenth room"
-    }
+    },
     {
         room_id: 20,
         north: false,
@@ -180,7 +180,7 @@ export const rooms = [
         west: true,
         title: "twentieth",
         description: "twentieth room"
-    }
+    },
     {
         room_id: 21,
         north: true,
@@ -189,7 +189,7 @@ export const rooms = [
         west: false,
         title: "twenty-first",
         description: "twenty-first room"
-    }
+    },
     {
         room_id: 22,
         north: false,
@@ -198,7 +198,7 @@ export const rooms = [
         west: true,
         title: "twenty-second",
         description: "twenty-second room"
-    }
+    },
     {
         room_id: 23,
         north: false,
@@ -207,7 +207,7 @@ export const rooms = [
         west: true,
         title: "twenty-third",
         description: "twenty-third room"
-    }
+    },
     {
         room_id: 24,
         north: false,
@@ -216,7 +216,7 @@ export const rooms = [
         west: false,
         title: "twenty-fourth",
         description: "twenty-fourth room"
-    }
+    },
     {
         room_id: 25,
         north: true,

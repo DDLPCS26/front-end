@@ -6,6 +6,9 @@ import styled from 'styled-components';
 import { styletest } from '../../helpers/styletest';
 // contexts
 import { DefaultTheme } from '../../contexts/DefaultTheme';
+// dummy data
+import { rooms } from '../../helpers/rooms';
+console.log(rooms);
 
 // component
 const GameDashboard = props => {
