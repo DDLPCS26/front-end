@@ -34,7 +34,6 @@ const MainNavigation = props => {
                 <Button onClick={() => buttonHandler('home')} colors={colorPalette}>Home</Button>
                 <Button onClick={() => buttonHandler('about')} colors={colorPalette}>About</Button>
                 <Button onClick={() => buttonHandler('login')} colors={colorPalette}>Register/Login</Button>
-                {console.log(colorPalette.surface900)}
             </Menu>
         </Container>
         </>

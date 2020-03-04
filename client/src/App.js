@@ -7,7 +7,7 @@ import MainNavigation from './components/MainNavigation';
 import Landing from './views/landing';
 
 const App = props => {
-  console.log(props);
+
   return (
     <>
       <Route path='/' component={MainNavigation} />
