@@ -1,5 +1,6 @@
 // react
 import React, { useState, useContext } from 'react';
+import axios from 'axios'
 // styled components
 import styled from 'styled-components';
 // helpers
@@ -8,7 +9,7 @@ import { styletest } from '../helpers/styletest';
 import { DefaultTheme } from '../contexts/DefaultTheme';
 
 const Register = props => {
-  const [register, setRegister] = useState({username: "", password: "", confirmPassword: ""})
+  const [register, setRegister] = useState({username: "", password: "", password2: ""})
 
   // contexts
   const colorPalette = useContext(DefaultTheme).colors;
@@ -20,7 +21,15 @@ const Register = props => {
 
 const handleSubmit = e => {
   e.preventDefault();
-
+  axios
+  .post('http://webserverhere.com/api/register', register)
+  .then(res => {
+    console.log(res, "Success!")
+    localStorage.setItem("token", res.data.token)
+  })
+  .catch(err => {
+    console.log(err, "Error!")
+  })
 }
   return (
     <Container colors={colorPalette}>
@@ -30,9 +39,9 @@ const handleSubmit = e => {
           
           <Label for="pword">Password</Label>
           <Input type="password" required id="pword" name="password" value={register.password} onChange={handleChange} colors={colorPalette}/>
-          {register.password !== register.confirmPassword && register.confirmPassword.length >= 3 ? <p>Password fields do not match!</p> : <></>}
+          {register.password !== register.password2 && register.password2.length >= 3 ? <p>Password fields do not match!</p> : <></>}
           <Label for="conpword">Confirm Password</Label>
-          <Input type="password" required id="conpword" name="confirmPassword" value={register.confirmPassword} onChange={handleChange} colors={colorPalette}/>
+          <Input type="password" required id="conpword" name="password2" value={register.password2} onChange={handleChange} colors={colorPalette}/>
   
           <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
             <Label for="conage">I am at least 13 years old or older</Label>

@@ -29,7 +29,6 @@ const MainNavigation = props => {
         <>
         <Container colors={colorPalette}>
             <Logo>CS Build Week 1</Logo>
-
             <Menu>
                 <Button onClick={() => buttonHandler('home')} colors={colorPalette}>Home</Button>
                 <Button onClick={() => buttonHandler('about')} colors={colorPalette}>About</Button>

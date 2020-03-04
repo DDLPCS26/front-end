@@ -1,5 +1,6 @@
 // react
 import React, { useState, useContext } from 'react';
+import axios from 'axios';
 // styled components
 import styled from 'styled-components';
 // helpers
@@ -18,6 +19,15 @@ const Login = props => {
   }
   const handleSubmit = e => {
     e.preventDefault();
+    axios
+    .post('http://webserverhere.com/api/login', login)
+    .then(res => {
+      console.log(res, "Success!")
+      localStorage.setItem("token", res.data.token)
+    })
+    .catch(err => {
+      console.log(err, "Error!")
+    })
   }
   return (
     <Container colors={colorPalette}>
