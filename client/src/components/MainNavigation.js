@@ -1,13 +1,18 @@
 // react
-import React from 'react';
+import React, { useContext } from 'react';
 // styled components
 import styled from 'styled-components';
 // helpers
 import { styletest } from '../helpers/styletest';
+// contexts
+import { DefaultTheme } from '../contexts/DefaultTheme';
 
 // component
 const MainNavigation = props => {
-    
+    // contexts
+    const colorPallete = useContext(DefaultTheme);
+    console.log(colorPallete);
+
     return (
         <>
         <Container>
