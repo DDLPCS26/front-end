@@ -65,6 +65,10 @@ const Button = styled.button`
         border: none;
         background-color: ${props => props.colors.surface600};
         color: ${props => props.colors.surface100};
+
+            &:hover {
+                background-color: ${props => props.colors.highlight};
+            }
 `
 
 // export
