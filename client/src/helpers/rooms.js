@@ -1,6 +1,6 @@
 // dummy data to test room visualization
 
-export const rooms = [
+export const dummyRooms = [
     {
         room_id: 1,
         north: false,
