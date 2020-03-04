@@ -86,6 +86,10 @@ const FullWidth = styled.div`
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+
+        h3 {
+            margin: 1rem;
+        }
 `
 
 const InformationalSection = styled.div`
