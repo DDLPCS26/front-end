@@ -5,13 +5,12 @@ import React from 'react';
 // styled components
 import styled from 'styled-components';
 // components
-import MainNavigation from '../../components/MainNavigation'
+// todo
 
 // component
 const Landing = () => {
     return (
         <>
-        <MainNavigation />
         hi from landing page.
         </>
     );
