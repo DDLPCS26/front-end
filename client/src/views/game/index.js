@@ -14,4 +14,7 @@ const GameDashboard = props => {
     );
 };
 
+// styled components
+// todo
+
 export default GameDashboard;
