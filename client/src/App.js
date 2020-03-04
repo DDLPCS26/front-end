@@ -21,7 +21,7 @@ const App = props => {
       {/* the game dashboard needs to move to a private route in production */}
       {/* im also pathing it to /about for the time being so that there is a menu button for it */}
       <Route exact path='/about' component={GameDashboard} />
-      <Route path='/' component={Footer} />
+      {/* <Route path='/' component={Footer} /> */}
     </>
   );
 }
