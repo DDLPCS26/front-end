@@ -14,5 +14,6 @@ export const colorPalette = {
     surface300: '#9aa5b1',
     surface200: '#CBD2D9',
     surface100: '#E4E7EB',
-    surface50: '#F5F7FA'
+    surface50: '#F5F7FA',
+    highlight: '#1ebbd7'
 }; 
