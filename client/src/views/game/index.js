@@ -21,10 +21,12 @@ const GameDashboard = props => {
 
             <ControlInterface colors={colorPalette}>
                 <Button>Start Game</Button>
-                <Button>North</Button>
-                <Button>East</Button>
-                <Button>South</Button>
-                <Button>West</Button>
+                <DirectionalControls colors={colorPalette}>
+                    <Button>North</Button>
+                    <Button>East</Button>
+                    <Button>South</Button>
+                    <Button>West</Button>
+                </DirectionalControls>
             </ControlInterface>
         </Container>
         </>
@@ -50,12 +52,39 @@ const GameWindow = styled.div`
 const ControlInterface = styled.div`
     width: 100%;
     height: 10rem;
-    background-color: ${props => props.colors.surface200};
+    background-color: ${props => props.colors.surface100};
     border-radius: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+
+    Button {
+        border: 3px solid ${props => props.colors.surface400};
+        background-color: transparent;
+        color: ${props => props.colors.surface400};
+        font-weight: bold;
+    }
+`
+
+const DirectionalControls = styled.div`
+    
+    Button {
+        border: 3px solid ${props => props.colors.surface400};
+        background-color: transparent;
+        color: ${props => props.colors.surface400};
+        font-weight: bold;
+    }
 `
 
 const Button = styled.button`
-
+    width: 10rem;
+    height: 5rem;
+    border: none;
+    border-radius: 5px;
+    margin: 1rem;
+    background-color: ${props => console.log(props)};
+    font-size: 1.15rem;
 `
 
 export default GameDashboard;
