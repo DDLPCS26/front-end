@@ -1,5 +1,7 @@
 // react
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
+// router
+import { Route, useHistory } from 'react-router-dom';
 // styled components
 import styled from 'styled-components';
 // helpers
@@ -9,9 +11,19 @@ import { DefaultTheme } from '../contexts/DefaultTheme';
 
 // component
 const MainNavigation = props => {
+    // router
+    const history = useHistory();
+    
     // contexts
     const colorPalette = useContext(DefaultTheme).colors;
-    console.log(colorPalette);
+
+    // state
+    // todo
+
+    // handlers
+    const buttonHandler = pathname => {
+        history.push(`/${pathname}`)
+    };
 
     return (
         <>
@@ -19,9 +31,9 @@ const MainNavigation = props => {
             <Logo>CS Build Week 1</Logo>
 
             <Menu>
-                <Button colors={colorPalette}>Home</Button>
-                <Button colors={colorPalette}>About</Button>
-                <Button colors={colorPalette}>Register/Login</Button>
+                <Button onClick={() => buttonHandler('home')} colors={colorPalette}>Home</Button>
+                <Button onClick={() => buttonHandler('about')} colors={colorPalette}>About</Button>
+                <Button onClick={() => buttonHandler('login')} colors={colorPalette}>Register/Login</Button>
                 {console.log(colorPalette.surface900)}
             </Menu>
         </Container>
@@ -34,7 +46,7 @@ const MainNavigation = props => {
 const Container = styled.div`
     width: 100%;
     height: 80px; // temp height
-    background-color: ${props => props.colors.surface600};
+    background-color: ${props => props.colors.surface800};
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -63,11 +75,19 @@ const Button = styled.button`
         margin: 0 0.5rem;
         padding: 0.5rem;
         border: none;
-        background-color: ${props => props.colors.surface600};
+        background-color: ${props => props.colors.surface800};
         color: ${props => props.colors.surface100};
+        letter-spacing: 0.015rem;
+        font-weight: bold;
+        font-size: 1rem;
 
             &:hover {
                 background-color: ${props => props.colors.highlight};
+            }
+
+            &:last-child {
+                width: 8rem;
+                margin-right: 1rem;
             }
 `
 
