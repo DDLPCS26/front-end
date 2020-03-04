@@ -20,7 +20,7 @@ const GameDashboard = props => {
             </GameWindow>
 
             <ControlInterface colors={colorPalette}>
-                <Button>Start Game</Button>
+                <Button className='start'>Start Game</Button>
                 <DirectionalControls colors={colorPalette}>
                     <Button>North</Button>
                     <Button>East</Button>
@@ -64,6 +64,10 @@ const ControlInterface = styled.div`
         background-color: transparent;
         color: ${props => props.colors.surface400};
         font-weight: bold;
+    }
+
+    .start {
+        width: 15rem;
     }
 `
 
