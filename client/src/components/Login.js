@@ -1,6 +1,7 @@
 // react
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 // styled components
 import styled from 'styled-components';
 // helpers
@@ -40,7 +41,7 @@ const Login = props => {
   
           <Button type="submit" colors={colorPalette}>Submit</Button>
       </Form>
-      Need to register a new account?
+      <Link to="/register" style={{ color: 'white' }}>Need to register a new account?</Link>
     </Container>
   );
 }
