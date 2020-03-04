@@ -5,6 +5,7 @@ export const DefaultTheme = createContext();
 
 // color variables
 export const colorPalette = {
+    surface1000: '#11171c',
     surface900: '#1F2933',
     surface800: '#323F4B',
     surface700: '#3E4C59',

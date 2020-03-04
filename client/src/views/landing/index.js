@@ -18,7 +18,7 @@ const Landing = () => {
     
     return (
         <>
-        <HeroSection>
+        <HeroSection colors={colorPalette}>
             <h1>Hero Section</h1>
         </HeroSection>
 
@@ -52,8 +52,8 @@ const Landing = () => {
 const HeroSection = styled.div`
     width: 100%;
     height: 800px; // temp height
-    background-color: black; // temp color
     color: white; // temp color
+    background-color: black;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
