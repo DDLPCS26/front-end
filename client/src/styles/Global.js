@@ -1,7 +1,25 @@
 // styled components
 import { createGlobalStyle } from 'styled-components';
 
-// style
+// styles
 export const GlobalStyles = createGlobalStyle`
-    // todo
+    body {
+        font-size: 1rem;
+        background-color: #1F2933;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 0.015rem;
+        color: #FFF;
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+    }
 `

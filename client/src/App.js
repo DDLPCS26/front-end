@@ -3,13 +3,17 @@ import React from 'react';
 // router
 import { Route } from 'react-router-dom';
 // components
-import Landing from './views/landing'
+import MainNavigation from './components/MainNavigation';
+import Footer from './components/Footer';
+import Landing from './views/landing';
 
 const App = props => {
+
   return (
     <>
-      hello world.
-      <Route path='/landing' component={Landing} />
+      <Route path='/' component={MainNavigation} />
+      <Route exact path='/home' component={Landing} />
+      <Route path='/' component={Footer} />
     </>
   );
 }
