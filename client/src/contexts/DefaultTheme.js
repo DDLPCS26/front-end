@@ -4,7 +4,7 @@ import { createContext } from 'react';
 export const DefaultTheme = createContext();
 
 // color variables
-export const colorPallete = {
+export const colorPalette = {
     surface900: '#1F2933',
     surface800: '#323F4B',
     surface700: '#3E4C59',

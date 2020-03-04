@@ -5,5 +5,6 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
     body {
         font-size: 1rem;
+        background-color: #1F2933;
     }
 `
