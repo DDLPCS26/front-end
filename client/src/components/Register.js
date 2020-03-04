@@ -9,7 +9,7 @@ import { styletest } from '../helpers/styletest';
 import { DefaultTheme } from '../contexts/DefaultTheme';
 
 const Register = props => {
-  const [register, setRegister] = useState({username: "", password: "", password2: ""})
+  const [register, setRegister] = useState({username: "", email: "", password: "", password2: ""})
 
   // contexts
   const colorPalette = useContext(DefaultTheme).colors;
@@ -36,7 +36,8 @@ const handleSubmit = e => {
       <Form action={handleSubmit}>
           <Label for="uname">Username</Label>
           <Input type="text" required id="uname" name="username" value={register.username} onChange={handleChange} colors={colorPalette}/>
-          
+          <Label for="email">Email</Label>
+          <Input type="email" required id="email" name="email" value={register.email} onChange={handleChange} colors={colorPalette}/>
           <Label for="pword">Password</Label>
           <Input type="password" required id="pword" name="password" value={register.password} onChange={handleChange} colors={colorPalette}/>
           {register.password !== register.password2 && register.password2.length >= 3 ? <p>Password fields do not match!</p> : <></>}
