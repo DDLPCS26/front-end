@@ -5,6 +5,8 @@ import { Route } from 'react-router-dom';
 // components
 import MainNavigation from './components/MainNavigation';
 import Landing from './views/landing';
+import Login from './views/user/Login';
+import Register from './views/user/Register'
 
 const App = props => {
   console.log(props);
@@ -12,6 +14,8 @@ const App = props => {
     <>
       <Route path='/' component={MainNavigation} />
       <Route exact path='/home' component={Landing} />
+      <Route exact path='/login' component={Login} />
+      <Route exact path='/register' component={Register} />
     </>
   );
 }
