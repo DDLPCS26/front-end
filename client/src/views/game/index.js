@@ -86,6 +86,13 @@ const ControlInterface = styled.div`
     .start {
         width: 15rem;
     }
+
+    .start:hover {
+        background-color: ${props => props.colors.highlight};
+        border: 3px solid ${props => props.colors.surface200};
+        color: ${props => props.colors.surface50};
+        transition: 0.5s;
+    }
 `
 
 const DirectionalControls = styled.div`
@@ -95,6 +102,13 @@ const DirectionalControls = styled.div`
         background-color: transparent;
         color: ${props => props.colors.surface400};
         font-weight: bold;
+    }
+
+    Button:hover {
+        background-color: ${props => props.colors.highlight};
+        border: 3px solid ${props => props.colors.surface200};
+        color: ${props => props.colors.surface50};
+        transition: 0.5s;
     }
 `
 
