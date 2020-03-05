@@ -16,8 +16,6 @@ const GameDashboard = props => {
 
     // state hooks
     const [rooms, setRooms] = useState(dummyRooms);
-    const [otherRooms, setOtherRooms] = useState(dummyRooms2);
-    console.log('checking rooms:', rooms);
     
     return (
         <>
@@ -32,13 +30,22 @@ const GameDashboard = props => {
 
             </GameWindow>
 
+            <PlayerHud colors={colorPalette}>
+                <p>Player Location:</p>
+                <p>Room ID:</p>
+                <p>Can move North:</p>
+                <p>Can move South:</p>
+                <p>Can move West:</p>
+                <p>Can move South:</p>
+            </PlayerHud>
+
             <ControlInterface colors={colorPalette}>
                 <Button className='start'>Start Game</Button>
                 <DirectionalControls colors={colorPalette}>
-                    <Button>North</Button>
-                    <Button>East</Button>
-                    <Button>South</Button>
-                    <Button>West</Button>
+                    <Button>Move North</Button>
+                    <Button>Move East</Button>
+                    <Button>Move South</Button>
+                    <Button>Move West</Button>
                 </DirectionalControls>
             </ControlInterface>
         </Container>
@@ -64,6 +71,12 @@ const GameWindow = styled.div`
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+`
+
+const PlayerHud = styled.div`
+    width: 100%;
+    height: 15rem;
+    background-color: ${props => props.colors.surface1000};
 `
 
 const ControlInterface = styled.div`
