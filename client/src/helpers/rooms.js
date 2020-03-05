@@ -31,8 +31,8 @@ export const dummyRooms = [
     {
         room_id: 4,
         north: false,
-        south: true,
-        east: false,
+        south: false,
+        east: true,
         west: true,
         title: "fourth",
         description: "fourth room"
@@ -77,7 +77,7 @@ export const dummyRooms = [
         room_id: 9,
         north: false,
         south: true,
-        east: false,
+        east: true,
         west: true,
         title: "ninth",
         description: "ninth room"
@@ -167,7 +167,7 @@ export const dummyRooms = [
         room_id: 19,
         north: true,
         south: false,
-        east: false,
+        east: true,
         west: true,
         title: "nineteenth",
         description: "nineteenth room"
@@ -226,5 +226,233 @@ export const dummyRooms = [
         title: "twenty-fifth",
         description: "twenty-fifth room"
     }
+];
+
+export const dummyRooms2 = [
+    {
+        room_id: 1,
+        north: false,
+        south: false,
+        east: true,
+        west: false,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 2,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 3,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 4,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 5,
+        north: false,
+        south: true,
+        east: false,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 6,
+        north: true,
+        south: false,
+        east: false,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 7,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 8,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 9,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 10,
+        north: false,
+        south: true,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 11,
+        north: true,
+        south: false,
+        east: false,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 12,
+        north: true,
+        south: false,
+        east: false,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 13,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 14,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 15,
+        north: false,
+        south: true,
+        east: false,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 16,
+        north: true,
+        south: false,
+        east: false,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 17,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 18,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 19,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 20,
+        north: false,
+        south: true,
+        east: true,
+        west: false,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 21,
+        north: true,
+        south: false,
+        east: false,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 22,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 23,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 24,
+        north: false,
+        south: false,
+        east: true,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
+    {
+        room_id: 25,
+        north: false,
+        south: true,
+        east: false,
+        west: true,
+        title: "Outside Cave Entrance",
+        description: "North of you, the cave mount beckons"
+    },
 ];
 

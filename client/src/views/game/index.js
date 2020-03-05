@@ -7,7 +7,7 @@ import { styletest } from '../../helpers/styletest';
 // contexts
 import { DefaultTheme } from '../../contexts/DefaultTheme';
 // dummy data
-import { dummyRooms } from '../../helpers/rooms';
+import { dummyRooms, dummyRooms2 } from '../../helpers/rooms';
 
 // component
 const GameDashboard = props => {
@@ -16,6 +16,7 @@ const GameDashboard = props => {
 
     // state hooks
     const [rooms, setRooms] = useState(dummyRooms);
+    const [otherRooms, setOtherRooms] = useState(dummyRooms2);
     console.log('checking rooms:', rooms);
     
     return (
@@ -25,7 +26,7 @@ const GameDashboard = props => {
 
                 <Map>
                     {rooms.map(room => {
-                        return <TempRoom north={room.north} south={room.south} east={room.east} west={room.west}/>
+                        return <TempRoom north={room.north} south={room.south} east={room.east} west={room.west} colors={colorPalette}/>
                     })}
                 </Map>
 
@@ -108,8 +109,8 @@ const Button = styled.button`
 `
 
 const Map = styled.div`
-    width: 45rem;
-    height: 45rem;
+    width: 500px;
+    height: 500px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -118,13 +119,13 @@ const Map = styled.div`
 `
 
 const TempRoom = styled.div`
-    width: 19%;
-    height: 19.99%;
-    background-color: red; // temp
-    border-top: ${props => props.north ? '2px solid red' : '2px solid white'};
-    border-bottom: ${props => props.south ? '2px solid red' : '2px solid white'};
-    border-left: ${props => props.west ? '2px solid red' : '2px solid white'};
-    border-right: ${props => props.east ? '2px solid red' : '2px solid white'};
+    width: 96px;
+    height: 96px;
+    background-color: ${props => props.colors.surface800};
+    border-top: ${props => props.north ? `2px solid ${props.colors.surface800}` : '2px solid white'};
+    border-bottom: ${props => props.south ? `2px solid ${props.colors.surface800}` : '2px solid white'};
+    border-left: ${props => props.west ? `2px solid ${props.colors.surface800}` : '2px solid white'};
+    border-right: ${props => props.east ? `2px solid ${props.colors.surface800}` : '2px solid white'};
 `
 
 export default GameDashboard;
