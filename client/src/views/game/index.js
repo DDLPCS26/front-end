@@ -25,7 +25,7 @@ const GameDashboard = props => {
         west: rooms[0].south,
         playerMoveChoice: "none"
     });
-    console.log(player.playerMoveChoice);
+    console.log(player);
 
     // handlers
     const moveHandler = direction => {
@@ -39,7 +39,14 @@ const GameDashboard = props => {
 
                 <Map>
                     {rooms.map(room => {
-                        return <TempRoom north={room.north} south={room.south} east={room.east} west={room.west} colors={colorPalette}/>
+                        return <TempRoom 
+                                    room={room.room_id}
+                                    playerRoom={player.room_id}
+                                    north={room.north} 
+                                    south={room.south} 
+                                    east={room.east} 
+                                    west={room.west} 
+                                    colors={colorPalette}/>
                     })}
                 </Map>
 
@@ -155,7 +162,6 @@ const Button = styled.button`
     border: none;
     border-radius: 5px;
     margin: 1rem;
-    background-color: ${props => console.log(props)};
     font-size: 1.15rem;
 `
 
@@ -172,7 +178,7 @@ const Map = styled.div`
 const TempRoom = styled.div`
     width: 96px;
     height: 96px;
-    background-color: ${props => props.colors.surface800};
+    background-color: ${props => props.room === props.playerRoom ? 'red' : props.colors.surface800};
     border-top: ${props => props.north ? `2px solid ${props.colors.surface800}` : '2px solid white'};
     border-bottom: ${props => props.south ? `2px solid ${props.colors.surface800}` : '2px solid white'};
     border-left: ${props => props.west ? `2px solid ${props.colors.surface800}` : '2px solid white'};
