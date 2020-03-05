@@ -8,6 +8,7 @@ import { styletest } from '../../helpers/styletest';
 import { DefaultTheme } from '../../contexts/DefaultTheme';
 // dummy data
 import { dummyRooms, dummyRooms2 } from '../../helpers/rooms';
+import { dummyPlayer } from '../../helpers/player';
 
 // component
 const GameDashboard = props => {
@@ -16,7 +17,21 @@ const GameDashboard = props => {
 
     // state hooks
     const [rooms, setRooms] = useState(dummyRooms);
-    
+    const [player, setPlayer] = useState({
+        ...dummyPlayer,
+        north: rooms[0].north,
+        south: rooms[0].south,
+        east: rooms[0].east,
+        west: rooms[0].south,
+        playerMoveChoice: "none"
+    });
+    console.log(player.playerMoveChoice);
+
+    // handlers
+    const moveHandler = direction => {
+        setPlayer({ ...player, playerMoveChoice: direction });
+    };
+
     return (
         <>
         <Container>
@@ -31,21 +46,30 @@ const GameDashboard = props => {
             </GameWindow>
 
             <PlayerHud colors={colorPalette}>
-                <p>Player Location:</p>
-                <p>Room ID:</p>
-                <p>Can move North:</p>
-                <p>Can move South:</p>
-                <p>Can move West:</p>
-                <p>Can move South:</p>
+                <p>Player Location: {player.title}</p>
+                <p>Room ID: {player.room_id}</p>
+                <p>Can move North: {player.north.toString()}</p>
+                <p>Can move South: {player.south.toString()}</p>
+                <p>Can move East: {player.east.toString()}</p>
+                <p>Can move West: {player.west.toString()}</p>
+                <p>Player move choice: {player.playerMoveChoice}</p>
+
+                <form>
+                    <input
+                        type="text"
+                        value={player.playerMoveChoice}
+                        placeholder="choose movement" 
+                    />
+                </form>
             </PlayerHud>
 
             <ControlInterface colors={colorPalette}>
                 <Button className='start'>Start Game</Button>
                 <DirectionalControls colors={colorPalette}>
-                    <Button>Move North</Button>
-                    <Button>Move East</Button>
-                    <Button>Move South</Button>
-                    <Button>Move West</Button>
+                    <Button onClick={() => moveHandler("north")}>Move North</Button>
+                    <Button onClick={() => moveHandler("east")}>Move East</Button>
+                    <Button onClick={() => moveHandler("south")}>Move South</Button>
+                    <Button onClick={() => moveHandler("west")}>Move West</Button>
                 </DirectionalControls>
             </ControlInterface>
         </Container>

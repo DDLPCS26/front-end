@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
         letter-spacing: 0.015rem;
         color: #FFF;
+        box-sizing: border-box;
 
             h1 {
                 font-size: 2.5rem;

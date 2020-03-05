@@ -1,7 +1,7 @@
 // player init dummy data
 
 export const dummyPlayer = {
-    uuid: "",
+    uuid: "123-abc-456-def",
     name: "tester",
     room_id: 1,
     title: "Outside Cave Entrance",
