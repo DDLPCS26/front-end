@@ -34,15 +34,22 @@ const arrayRig = array => {
 // component
 const Sandbox = () => {
     // state hooks
-    const [player, setPlayer] = useState(dummyPlayer);
+    const [player, setPlayer] = useState({
+        ...dummyPlayer,
+        north: false,
+        south: false,
+        west: false,
+        east: true
+    });
     const [map, setMap] = useState({
         base: 12
     });
     const [rooms, setRooms] = useState(arrayRig(dummyRooms.rooms));
-    console.log(dummyPlayer);
 
     // handlers
     const moveHandler = direction => {
+
+
         if (direction === 'n' && !(player.grid_y <= 0)) {
             setPlayer({
                 ...player,
@@ -53,7 +60,7 @@ const Sandbox = () => {
             setPlayer({
                 ...player,
                 grid_x: player.grid_x,
-                grid_y: player.grid_y + 1
+                grid_y: player.grid_y + 1,
             })
         } else if (direction === 'w' && !(player.grid_x <= 0)) {
             setPlayer({
