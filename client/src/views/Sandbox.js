@@ -43,7 +43,7 @@ const Sandbox = () => {
 
     // handlers
     const moveHandler = direction => {
-        if (direction === 'n' && !(player.grid_x <= 0)) {
+        if (direction === 'n' && !(player.grid_y <= 0)) {
             setPlayer({
                 ...player,
                 grid_x: player.grid_x,
@@ -93,6 +93,7 @@ const Sandbox = () => {
                             <p>ID:{room.id.toString()}</p>
                             <p>X:{room.x.toString()}</p> 
                             <p>Y: {room.y.toString()}</p> 
+                            {console.log('player coordinates:', `x: ${player.grid_x} y: ${player.grid_y}`)}
                             </Room>
                 })}
             </GameMap>
