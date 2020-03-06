@@ -116,9 +116,9 @@ const Sandbox = () => {
                 <Button className='start'>Start Game</Button>
                 <DirectionalControls colors={colorPalette}>
                     <Button onClick={() => moveHandler("n")}>Move North</Button>
-                    <Button onClick={() => moveHandler("e")}>Move East</Button>
                     <Button onClick={() => moveHandler("s")}>Move South</Button>
                     <Button onClick={() => moveHandler("w")}>Move West</Button>
+                    <Button onClick={() => moveHandler("e")}>Move East</Button>
                 </DirectionalControls>
             </ControlInterface>
             </Container>
