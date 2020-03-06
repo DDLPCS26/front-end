@@ -1,9 +1,11 @@
 // testing sandbox
 
 // react
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 // styled components
 import styled from 'styled-components';
+// contexts
+import { DefaultTheme } from '../contexts/DefaultTheme';
 // dummy data
 import {dummyRooms} from '../helpers/rooms';
 import {dummyPlayer} from '../helpers/player';
@@ -33,6 +35,8 @@ const arrayRig = array => {
 
 // component
 const Sandbox = () => {
+    // contexts
+    const colorPalette = useContext(DefaultTheme).colors;
     // state hooks
     const [player, setPlayer] = useState({
         ...dummyPlayer,
