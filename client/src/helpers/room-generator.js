@@ -27,6 +27,16 @@ export const generateRooms = base => {
                 title: `room number ${i}`,
                 description: `${i} number of rooms into the maze`
             })
+        } else if (i > 0 && i <= base) {
+            rooms.push({
+                room_id: i,
+                north: false,
+                south: generateBool(),
+                east: generateBool(),
+                west: generateBool(),
+                title: `room number ${i}`,
+                description: `${i} number of rooms into the maze`
+            })
         } else if (count % base === 1) {
             rooms.push({
                 room_id: i,
