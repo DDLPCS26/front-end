@@ -43,20 +43,32 @@ const Sandbox = () => {
 
     // handlers
     const moveHandler = direction => {
-        if (direction === 'n') {
-
-        } else if (direction === 's') {
+        if (direction === 'n' && !(player.grid_x <= 0)) {
+            setPlayer({
+                ...player,
+                grid_x: player.grid_x,
+                grid_y: player.grid_y - 1
+            })
+        } else if (direction === 's' && !(player.grid_y >= 11)) {
             setPlayer({
                 ...player,
                 grid_x: player.grid_x,
                 grid_y: player.grid_y + 1
             })
-        } else if (direction === 'w') {
-
-        } else if (direction === 'e') {
-
+        } else if (direction === 'w' && !(player.grid_x <= 0)) {
+            setPlayer({
+                ...player,
+                grid_x: player.grid_x - 1,
+                grid_y: player.grid_y
+            })
+        } else if (direction === 'e' && !(player.grid_x >= 11)) {
+            setPlayer({
+                ...player,
+                grid_x: player.grid_x + 1,
+                grid_y: player.grid_y
+            })
         } else {
-
+            console.log('illegal movement');
         }
     };
 
@@ -89,10 +101,10 @@ const Sandbox = () => {
         <PlayerControls>
             <Button>Start Game</Button>
 
-            <Button>Move North</Button>
+            <Button onClick={() => moveHandler('n')}>Move North</Button>
             <Button onClick={() => moveHandler('s')}>Move South</Button>
-            <Button>Move West</Button>
-            <Button>Move East</Button>
+            <Button onClick={() => moveHandler('w')}>Move West</Button>
+            <Button onClick={() => moveHandler('e')}>Move East</Button>
         </PlayerControls>
         </>
     );
