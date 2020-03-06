@@ -10,6 +10,10 @@ import { DefaultTheme } from '../../contexts/DefaultTheme';
 import { dummyRooms, dummyRooms2 } from '../../helpers/rooms';
 import { dummyPlayer } from '../../helpers/player';
 
+import roomGen from '../../helpers/room-generator';
+
+console.log('checking roomGen:', roomGen);
+
 // component
 const GameDashboard = props => {
     // contexts
