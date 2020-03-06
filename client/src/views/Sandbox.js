@@ -13,18 +13,18 @@ const arrayRig = array => {
     let newArray = [];
     let row1 = array.slice(0,12);
     let row2 = array.slice(12,24).reverse();
-    let row3 = array.slice(24,48);
-    let row4 = array.slice(48, 60).reverse();
-    let row5 = array.slice(60, 72);
-    let row6 = array.slice(72, 84).reverse();
-    let row7 = array.slice(84, 96);
-    let row8 = array.slice(96, 108).reverse();
-    let row9 = array.slice(108, 120);
-    let row10 = array.slice(120, 132);
-    let row11 = array.slice(132, 144).reverse();
-    let row12 = array.slice();
+    let row3 = array.slice(24,36);
+    let row4 = array.slice(36,48).reverse();
+    let row5 = array.slice(48,60);
+    let row6 = array.slice(60,72).reverse();
+    let row7 = array.slice(72,84);
+    let row8 = array.slice(84,96).reverse();
+    let row9 = array.slice(96,108);
+    let row10 = array.slice(108,120).reverse();
+    let row11 = array.slice(120,132);
+    let row12 = array.slice(132,144).reverse();
 
-    newArray = row1.concat(row2, row3, row4, row5, row6, row7, row8, row9, row10, row11);
+    newArray = row1.concat(row2, row3, row4, row5, row6, row7, row8, row9, row10, row11, row12);
 
     return newArray;
 
@@ -48,7 +48,8 @@ const Sandbox = () => {
         } else if (direction === 's') {
             setPlayer({
                 ...player,
-                room_id: player.room_id + 12
+                grid_x: player.grid_x,
+                grid_y: player.grid_y + 1
             })
         } else if (direction === 'w') {
 
@@ -71,7 +72,11 @@ const Sandbox = () => {
                                 east={room.east}
                                 west={room.west}
                                 room={room.id} 
+                                roomX={room.x}
+                                roomY={room.y}
                                 playerLocation={player.room_id}
+                                playerX={player.grid_x}
+                                playerY={player.grid_y}
                             > 
                             <p>ID:{room.id.toString()}</p>
                             <p>X:{room.x.toString()}</p> 
@@ -119,7 +124,7 @@ const Room = styled.div`
     width: ${props => `${props.base * 5 - 5}px`};
     height: ${props => `${props.base * 5}px`};
     border: 1px solid blue;
-    background-color: ${props => props.playerLocation === props.room ? 'black' : 'red'};
+    background-color: ${props => props.playerX === props.roomX && props.playerY === props.roomY  ? 'black' : 'red'};
 `
 
 const PlayerControls = styled.div`
