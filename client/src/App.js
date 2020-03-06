@@ -9,6 +9,7 @@ import Landing from './views/landing';
 import Login from './views/user/Login';
 import Register from './views/user/Register'
 import GameDashboard from './views/game/index';
+import Sandbox from './views/Sandbox';
 
 const App = props => {
 
@@ -22,6 +23,7 @@ const App = props => {
       {/* im also pathing it to /about for the time being so that there is a menu button for it */}
       <Route exact path='/about' component={GameDashboard} />
       {/* <Route path='/' component={Footer} /> */}
+      <Route exact path='/sandbox' component={Sandbox} />
     </>
   );
 }
