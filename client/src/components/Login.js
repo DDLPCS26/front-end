@@ -23,7 +23,8 @@ const Login = props => {
   }
   const handleSubmit = e => {
     e.preventDefault();
-    localStorage.setItem('username', login.username)
+    localStorage.setItem('username', login.username);
+    localStorage.setItem('loggedIn', true);
     history.push('/dashboard');
   }
 
