@@ -15,6 +15,7 @@ const App = props => {
   return (
     <>
       <Route path='/' component={MainNavigation} />
+      <Route exact path='/' component={Landing} />
       <Route exact path='/home' component={Landing} />
       <Route exact path='/login' component={Login} />
       <Route exact path='/register' component={Register} />
