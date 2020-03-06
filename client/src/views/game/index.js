@@ -7,7 +7,7 @@ import { styletest } from '../../helpers/styletest';
 // contexts
 import { DefaultTheme } from '../../contexts/DefaultTheme';
 // dummy data
-import { dummyRooms, dummyRooms2 } from '../../helpers/rooms';
+import { dummyRooms } from '../../helpers/rooms';
 import { dummyPlayer } from '../../helpers/player';
 
 import { generateBool, generateRooms } from '../../helpers/room-generator';

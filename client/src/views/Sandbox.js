@@ -13,22 +13,14 @@ const Sandbox = () => {
     const [map, setMap] = useState({
         base: 10
     });
-    const [rooms, setRooms] = useState(generateRooms(map.base));
+    const [rooms, setRooms] = useState();
     console.log(rooms);
 
     return (
         <>
         <GameWindow>
             <GameMap base={map.base}>
-                {rooms.map(room => {
-                    return <Room 
-                    base={map.base}
-                    north={room.north}
-                    south={room.south}
-                    west={room.west}
-                    east={room.east} 
-                    />
-                })}
+                
             </GameMap>
         </GameWindow>
         </>
@@ -58,9 +50,9 @@ const GameMap = styled.div`
 `
 
 const Room = styled.div`
-    width: ${props => `${props.base * 10 - 5}px`};
+    width: ${props => `${props.base * 10 - 5}`};
     height: ${props => `${props.base * 10}px`};
-    border: 1px solid blue;
+    // border: 1px solid blue;
     background-color: red;
 `
 
