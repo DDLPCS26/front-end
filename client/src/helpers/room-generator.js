@@ -1,6 +1,6 @@
 // room generator for front end testing
 
-const generateBool = () => {
+export const generateBool = () => {
     let pick = Math.random();
 
     if (pick < 0.5) {
@@ -10,19 +10,44 @@ const generateBool = () => {
     }
 };
 
-const generateRooms = base => {
+export const generateRooms = base => {
     let rooms = [];
+    let count = 0;
 
-    for (let i = 0; i < (base * base); i++) {
-        rooms.push({
-            room_id: i,
-            north: generateBool(),
-            south: generateBool(),
-            east: generateBool(),
-            west: generateBool(),
-            title: `room number ${i}`,
-            description: `${i} number of rooms into the maze`
-        })
+    for (let i = 1; i < (base * base + 1); i++) {
+        count += 1;
+        
+        if (i % base === 0) {
+            rooms.push({
+                room_id: i,
+                north: generateBool(),
+                south: generateBool(),
+                east: false,
+                west: generateBool(),
+                title: `room number ${i}`,
+                description: `${i} number of rooms into the maze`
+            })
+        } else if (count % base === 1) {
+            rooms.push({
+                room_id: i,
+                north: generateBool(),
+                south: generateBool(),
+                east: generateBool(),
+                west: false,
+                title: `room number ${i}`,
+                description: `${i} number of rooms into the maze`
+            })
+        } else {
+            rooms.push({
+                room_id: i,
+                north: generateBool(),
+                south: generateBool(),
+                east: generateBool(),
+                west: generateBool(),
+                title: `room number ${i}`,
+                description: `${i} number of rooms into the maze`
+            })
+        }
     }
 
     return rooms;

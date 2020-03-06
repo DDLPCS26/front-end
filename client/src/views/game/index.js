@@ -10,9 +10,7 @@ import { DefaultTheme } from '../../contexts/DefaultTheme';
 import { dummyRooms, dummyRooms2 } from '../../helpers/rooms';
 import { dummyPlayer } from '../../helpers/player';
 
-import roomGen from '../../helpers/room-generator';
-
-console.log('checking roomGen:', roomGen);
+import { generateBool, generateRooms } from '../../helpers/room-generator';
 
 // component
 const GameDashboard = props => {
@@ -20,7 +18,7 @@ const GameDashboard = props => {
     const colorPalette = useContext(DefaultTheme).colors;
 
     // state hooks
-    const [rooms, setRooms] = useState(dummyRooms);
+    const [rooms, setRooms] = useState(generateRooms(5));
     const [player, setPlayer] = useState({
         ...dummyPlayer,
         north: rooms[0].north,
