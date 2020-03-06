@@ -85,7 +85,8 @@ const Sandbox = () => {
 
     return (
         <>
-        <GameWindow>
+        <Container>
+        <GameWindow colors={colorPalette}>
             <GameMap base={map.base}>
                 {rooms.map(room => {
                     return <Room
@@ -100,6 +101,7 @@ const Sandbox = () => {
                                 playerLocation={player.room_id}
                                 playerX={player.grid_x}
                                 playerY={player.grid_y}
+                                colors={colorPalette}
                             > 
                             <p>ID:{room.id.toString()}</p>
                             <p>X:{room.x.toString()}</p> 
@@ -110,23 +112,33 @@ const Sandbox = () => {
             </GameMap>
         </GameWindow>
 
-        <PlayerControls>
-            <Button>Start Game</Button>
-
-            <Button onClick={() => moveHandler('n')}>Move North</Button>
-            <Button onClick={() => moveHandler('s')}>Move South</Button>
-            <Button onClick={() => moveHandler('w')}>Move West</Button>
-            <Button onClick={() => moveHandler('e')}>Move East</Button>
-        </PlayerControls>
+        <ControlInterface colors={colorPalette}>
+                <Button className='start'>Start Game</Button>
+                <DirectionalControls colors={colorPalette}>
+                    <Button onClick={() => moveHandler("n")}>Move North</Button>
+                    <Button onClick={() => moveHandler("e")}>Move East</Button>
+                    <Button onClick={() => moveHandler("s")}>Move South</Button>
+                    <Button onClick={() => moveHandler("w")}>Move West</Button>
+                </DirectionalControls>
+            </ControlInterface>
+            </Container>
         </>
     );
 };
 
 // styled components
+
+const Container = styled.div`
+    width: 100%;
+    max-width: 1400px;
+    margin: 5rem auto;
+    height: 800px; // temp height
+`
+
 const GameWindow = styled.div`
     width: 90%;
     height: 50rem;
-    background-color: black;
+    background-color: ${props => props.colors.surface1000};
     margin: 5rem auto;
     display: flex;
     flex-flow: column nowrap;
@@ -145,18 +157,65 @@ const GameMap = styled.div`
 `
 
 const Room = styled.div`
-    width: ${props => `${props.base * 5 - 5}px`};
+    width: ${props => `${props.base * 5.25 - 5}px`};
     height: ${props => `${props.base * 5}px`};
-    border: 1px solid blue;
-    background-color: ${props => props.playerX === props.roomX && props.playerY === props.roomY  ? 'black' : 'red'};
+    border: 1px solid ${props => props.colors.surface300};
+    background-color: ${props => props.playerX === props.roomX && props.playerY === props.roomY  ? `${props.colors.highlight}` : `${props.colors.surface200}`};
 `
 
-const PlayerControls = styled.div`
+const ControlInterface = styled.div`
+    width: 100%;
+    height: 10rem;
+    background-color: ${props => props.colors.surface100};
+    border-radius: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
 
+    Button {
+        border: 3px solid ${props => props.colors.surface400};
+        background-color: transparent;
+        color: ${props => props.colors.surface400};
+        font-weight: bold;
+    }
+
+    .start {
+        width: 15rem;
+    }
+
+    .start:hover {
+        background-color: ${props => props.colors.highlight};
+        border: 3px solid ${props => props.colors.surface200};
+        color: ${props => props.colors.surface50};
+        transition: 0.5s;
+    }
+`
+
+const DirectionalControls = styled.div`
+    
+    Button {
+        border: 3px solid ${props => props.colors.surface400};
+        background-color: transparent;
+        color: ${props => props.colors.surface400};
+        font-weight: bold;
+    }
+
+    Button:hover {
+        background-color: ${props => props.colors.highlight};
+        border: 3px solid ${props => props.colors.surface200};
+        color: ${props => props.colors.surface50};
+        transition: 0.5s;
+    }
 `
 
 const Button = styled.button`
-
+    width: 10rem;
+    height: 5rem;
+    border: none;
+    border-radius: 5px;
+    margin: 1rem;
+    font-size: 1.15rem;
 `
 
 // export
