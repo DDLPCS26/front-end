@@ -6,25 +6,58 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 // dummy data
 import {dummyRooms} from '../helpers/rooms';
+import {dummyPlayer} from '../helpers/player';
 
 // helper functions
+const arrayRig = array => {
+    let newArray = [];
+    let row1 = array.slice(0,12);
+    let row2 = array.slice(12,24).reverse();
+    let row3 = array.slice(24,48);
+    let row4 = array.slice(48, 60).reverse();
+    let row5 = array.slice(60, 72);
+    let row6 = array.slice(72, 84).reverse();
+    let row7 = array.slice(84, 96);
+    let row8 = array.slice(96, 108).reverse();
+    let row9 = array.slice(108, 120);
+    let row10 = array.slice(120, 132);
+    let row11 = array.slice(132, 144).reverse();
+    let row12 = array.slice();
 
-const connectionCheck = array => {
-    for (let i = 0; i < array.length - 1; i++) {
-        if (array[i].north === array[i + 1].south || array[i].east === array[i + 1].west || array[i].south === array[i + 1].north || array[i].west === array[i + 1].east) {
+    newArray = row1.concat(row2, row3, row4, row5, row6, row7, row8, row9, row10, row11);
 
-        }
-    }
+    return newArray;
+
 };
+
 
 // component
 const Sandbox = () => {
     // state hooks
+    const [player, setPlayer] = useState(dummyPlayer);
     const [map, setMap] = useState({
         base: 12
     });
-    const [rooms, setRooms] = useState(dummyRooms.rooms);
-    console.log(rooms);
+    const [rooms, setRooms] = useState(arrayRig(dummyRooms.rooms));
+    console.log(dummyPlayer);
+
+    // handlers
+    const moveHandler = direction => {
+        if (direction === 'n') {
+
+        } else if (direction === 's') {
+            setPlayer({
+                ...player,
+                room_id: player.room_id + 12
+            })
+        } else if (direction === 'w') {
+
+        } else if (direction === 'e') {
+
+        } else {
+
+        }
+    };
 
     return (
         <>
@@ -36,7 +69,9 @@ const Sandbox = () => {
                                 north={room.north}
                                 south={room.south}
                                 east={room.east}
-                                west={room.west} 
+                                west={room.west}
+                                room={room.id} 
+                                playerLocation={player.room_id}
                             > 
                             <p>ID:{room.id.toString()}</p>
                             <p>X:{room.x.toString()}</p> 
@@ -45,6 +80,15 @@ const Sandbox = () => {
                 })}
             </GameMap>
         </GameWindow>
+
+        <PlayerControls>
+            <Button>Start Game</Button>
+
+            <Button>Move North</Button>
+            <Button onClick={() => moveHandler('s')}>Move South</Button>
+            <Button>Move West</Button>
+            <Button>Move East</Button>
+        </PlayerControls>
         </>
     );
 };
@@ -75,7 +119,15 @@ const Room = styled.div`
     width: ${props => `${props.base * 5 - 5}px`};
     height: ${props => `${props.base * 5}px`};
     border: 1px solid blue;
-    background-color: red;
+    background-color: ${props => props.playerLocation === props.room ? 'black' : 'red'};
+`
+
+const PlayerControls = styled.div`
+
+`
+
+const Button = styled.button`
+
 `
 
 // export
