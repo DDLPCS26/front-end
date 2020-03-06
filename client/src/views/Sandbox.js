@@ -6,8 +6,16 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 // dummy data
 import {dummyRooms} from '../helpers/rooms';
-// generate rooms
-import { generateBool, generateRooms } from '../helpers/room-generator';
+
+// helper functions
+
+const connectionCheck = array => {
+    for (let i = 0; i < array.length - 1; i++) {
+        if (array[i].north === array[i + 1].south || array[i].east === array[i + 1].west || array[i].south === array[i + 1].north || array[i].west === array[i + 1].east) {
+
+        }
+    }
+};
 
 // component
 const Sandbox = () => {
@@ -15,14 +23,26 @@ const Sandbox = () => {
     const [map, setMap] = useState({
         base: 12
     });
-    const [rooms, setRooms] = useState(dummyRooms);
+    const [rooms, setRooms] = useState(dummyRooms.rooms);
     console.log(rooms);
 
     return (
         <>
         <GameWindow>
             <GameMap base={map.base}>
-                
+                {rooms.map(room => {
+                    return <Room
+                                base={map.base}
+                                north={room.north}
+                                south={room.south}
+                                east={room.east}
+                                west={room.west} 
+                            > 
+                            <p>ID:{room.id.toString()}</p>
+                            <p>X:{room.x.toString()}</p> 
+                            <p>Y: {room.y.toString()}</p> 
+                            </Room>
+                })}
             </GameMap>
         </GameWindow>
         </>
@@ -52,9 +72,9 @@ const GameMap = styled.div`
 `
 
 const Room = styled.div`
-    width: ${props => `${props.base * 10 - 5}`};
-    height: ${props => `${props.base * 10}px`};
-    // border: 1px solid blue;
+    width: ${props => `${props.base * 5 - 5}px`};
+    height: ${props => `${props.base * 5}px`};
+    border: 1px solid blue;
     background-color: red;
 `
 
