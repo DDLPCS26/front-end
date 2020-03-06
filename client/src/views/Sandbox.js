@@ -103,9 +103,9 @@ const Sandbox = () => {
                                 playerY={player.grid_y}
                                 colors={colorPalette}
                             > 
-                            <p>ID:{room.id.toString()}</p>
+                            {/* <p>ID:{room.id.toString()}</p>
                             <p>X:{room.x.toString()}</p> 
-                            <p>Y: {room.y.toString()}</p> 
+                            <p>Y: {room.y.toString()}</p>  */}
                             {console.log('player coordinates:', `x: ${player.grid_x} y: ${player.grid_y}`)}
                             </Room>
                 })}
