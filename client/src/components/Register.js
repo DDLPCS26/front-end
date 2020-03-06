@@ -1,14 +1,18 @@
 // react
 import React, { useState, useContext } from 'react';
+import axios from 'axios';
+
 // styled components
 import styled from 'styled-components';
+
 // helpers
 import { styletest } from '../helpers/styletest';
+
 // contexts
 import { DefaultTheme } from '../contexts/DefaultTheme';
 
 const Register = props => {
-  const [register, setRegister] = useState({username: "", password: "", confirmPassword: ""})
+  const [register, setRegister] = useState({username: "", password1: "", password2: ""})
 
   // contexts
   const colorPalette = useContext(DefaultTheme).colors;
@@ -20,7 +24,15 @@ const Register = props => {
 
 const handleSubmit = e => {
   e.preventDefault();
-
+  const endpoint = 'https://mud-backend-ddlp.herokuapp.com/api/registration/';
+    axios
+      .post(endpoint, this.state)
+      .then(response => {
+          console.log(response)
+        localStorage.setItem('key', response.data.key)
+        this.props.history.push('/dashboard')
+      })
+      .catch(error => console.log(error));
 }
   return (
     <Container colors={colorPalette}>
@@ -29,10 +41,10 @@ const handleSubmit = e => {
           <Input type="text" required id="uname" name="username" value={register.username} onChange={handleChange} colors={colorPalette}/>
           
           <Label for="pword">Password</Label>
-          <Input type="password" required id="pword" name="password" value={register.password} onChange={handleChange} colors={colorPalette}/>
-          {register.password !== register.confirmPassword && register.confirmPassword.length >= 3 ? <p>Password fields do not match!</p> : <></>}
+          <Input type="password" required id="pword" name="password1" value={register.password1} onChange={handleChange} colors={colorPalette}/>
+          {register.password1 !== register.password2 && register.password2.length >= 3 ? <p>Password fields do not match!</p> : <></>}
           <Label for="conpword">Confirm Password</Label>
-          <Input type="password" required id="conpword" name="confirmPassword" value={register.confirmPassword} onChange={handleChange} colors={colorPalette}/>
+          <Input type="password" required id="conpword" name="password2" value={register.password2} onChange={handleChange} colors={colorPalette}/>
   
           <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
             <Label for="conage">I am at least 13 years old or older</Label>

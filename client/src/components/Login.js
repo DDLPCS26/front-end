@@ -1,9 +1,13 @@
 // react
 import React, { useState, useContext } from 'react';
+import axios from 'axios';
+
 // styled components
 import styled from 'styled-components';
+
 // helpers
 import { styletest } from '../helpers/styletest';
+
 // contexts
 import { DefaultTheme } from '../contexts/DefaultTheme';
 
@@ -18,6 +22,14 @@ const Login = props => {
   }
   const handleSubmit = e => {
     e.preventDefault();
+    const endpoint = 'https://mud-backend-ddlp.herokuapp.com/api/login/';
+    axios
+		.post(endpoint, this.state)
+		.then(response => {
+      localStorage.setItem('key', response.data.key)
+			this.props.history.push('/dashboard') 
+		})
+			.catch(error => console.log(error));
   }
   return (
     <Container colors={colorPalette}>
