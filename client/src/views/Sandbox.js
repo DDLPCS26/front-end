@@ -4,6 +4,8 @@
 import React, { useState } from 'react';
 // styled components
 import styled from 'styled-components';
+// dummy data
+import {dummyRooms} from '../helpers/rooms';
 // generate rooms
 import { generateBool, generateRooms } from '../helpers/room-generator';
 
@@ -11,9 +13,9 @@ import { generateBool, generateRooms } from '../helpers/room-generator';
 const Sandbox = () => {
     // state hooks
     const [map, setMap] = useState({
-        base: 10
+        base: 12
     });
-    const [rooms, setRooms] = useState();
+    const [rooms, setRooms] = useState(dummyRooms);
     console.log(rooms);
 
     return (
@@ -30,7 +32,7 @@ const Sandbox = () => {
 // styled components
 const GameWindow = styled.div`
     width: 90%;
-    height: 70rem;
+    height: 50rem;
     background-color: black;
     margin: 5rem auto;
     display: flex;
@@ -40,8 +42,8 @@ const GameWindow = styled.div`
 `
 
 const GameMap = styled.div`
-    width: ${props => `${props.base * 100}px`};
-    height ${props => `${props.base * 100}px`};
+    width: ${props => `${props.base * 60}px`};
+    height ${props => `${props.base * 60}px`};
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
